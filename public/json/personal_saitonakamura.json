@@ -1,0 +1,143 @@
+{
+  "title": "Personal rules (@saitonakamura)",
+  "rules": [
+    {
+      "description": "Double tap and hold left_shift to make it left_option",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_shift_pressed",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "left_shift"
+          },
+          "to": [
+            {
+              "key_code": "left_alt",
+              "modifiers": []
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_shift"
+          },
+          "to": [
+            {
+              "key_code": "left_shift"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "set_variable": {
+                "name": "left_shift_pressed",
+                "value": 1
+              }
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "left_shift_pressed",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "left_shift_pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "left_shift_pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "description": "Double tap and hold right_shift to make it right_option",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "right_shift_pressed",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "right_shift"
+          },
+          "to": [
+            {
+              "key_code": "right_alt",
+              "modifiers": []
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_shift"
+          },
+          "to": [
+            {
+              "key_code": "right_shift"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "set_variable": {
+                "name": "right_shift_pressed",
+                "value": 1
+              }
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "right_shift_pressed",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "right_shift_pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "right_shift_pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
