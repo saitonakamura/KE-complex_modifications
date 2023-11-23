@@ -58,60 +58,60 @@ function main() {
             ]
           },
           {
-            description: 'Double tap and hold command to enable vi mode',
+            description: 'Double tap and hold command for MEH',
             manipulators: [
               {
                 type: 'basic',
                 conditions: [{ type: 'variable_if', name: 'left_command pressed', value: 1 }],
                 from: { key_code: 'left_command' },
                 to: [
-                  { set_variable: { name: 'vi mode', value: 1 } },
-                  // { key_code: 'left_shift', modifiers: ['left_control', 'left_alt'] }
+                  // { set_variable: { name: 'vi mode', value: 1 } },
+                  { key_code: 'left_shift', modifiers: ['left_control', 'left_alt'] }
                 ],
-                to_delayed_action: {
-                  to_if_invoked: [{ set_variable: { name: 'vi mode', value: 0 } }],
-                  to_if_canceled: [{ set_variable: { name: 'vi mode', value: 0 } }],
-                },
+                // to_after_key_up: [{ set_variable: { name: 'vi mode', value: 0 } }],
+                // to_delayed_action: {
+                  // to_if_invoked: [{ set_variable: { name: 'vi mode', value: 0 } }],
+                  // to_if_canceled: [{ set_variable: { name: 'vi mode', value: 0 } }],
+                // },
               },
               {
                 type: 'basic',
                 from: { key_code: 'left_command' },
                 to: [
                   { set_variable: { name: 'left_command pressed', value: 1 } },
+                  // { set_variable: { name: 'vi mode', value: 1 } },
                   { key_code: 'left_command' },
                 ],
                 to_delayed_action: {
                   to_if_invoked: [{ set_variable: { name: 'left_command pressed', value: 0 } }],
                   to_if_canceled: [{ set_variable: { name: 'left_command pressed', value: 0 } }],
+                  // to_if_invoked: [{ set_variable: { name: 'vi mode', value: 0 } }],
+                  // to_if_canceled: [{ set_variable: { name: 'vi mode', value: 0 } }],
                 },
               },
             ],
           },
           {
-            description: 'vi mode',
+            description: 'vi mode w/ MEH',
             manipulators: [
               {
                 type: 'basic',
-                conditions: [{ type: 'variable_if', name: 'vi mode', value: 1 }],
-                from: { key_code: 'h' },
+                from: { key_code: 'h', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
                 to: { key_code: 'left_arrow' },
               },
               {
                 type: 'basic',
-                conditions: [{ type: 'variable_if', name: 'vi mode', value: 1 }],
-                from: { key_code: 'j' },
+                from: { key_code: 'j', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
                 to: { key_code: 'down_arrow' },
               },
               {
                 type: 'basic',
-                conditions: [{ type: 'variable_if', name: 'vi mode', value: 1 }],
-                from: { key_code: 'k' },
+                from: { key_code: 'k', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
                 to: { key_code: 'up_arrow' },
               },
               {
                 type: 'basic',
-                conditions: [{ type: 'variable_if', name: 'vi mode', value: 1 }],
-                from: { key_code: 'l' },
+                from: { key_code: 'l', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
                 to: { key_code: 'right_arrow' },
               },
             ]
