@@ -58,35 +58,51 @@ function main() {
             ]
           },
           {
-            description: 'Double tap and hold command for MEH',
+            description: 'Double tap and hold left command for MEH',
             manipulators: [
               {
                 type: 'basic',
                 conditions: [{ type: 'variable_if', name: 'left_command pressed', value: 1 }],
                 from: { key_code: 'left_command' },
                 to: [
-                  // { set_variable: { name: 'vi mode', value: 1 } },
                   { key_code: 'left_shift', modifiers: ['left_control', 'left_alt'] }
                 ],
-                // to_after_key_up: [{ set_variable: { name: 'vi mode', value: 0 } }],
-                // to_delayed_action: {
-                  // to_if_invoked: [{ set_variable: { name: 'vi mode', value: 0 } }],
-                  // to_if_canceled: [{ set_variable: { name: 'vi mode', value: 0 } }],
-                // },
               },
               {
                 type: 'basic',
                 from: { key_code: 'left_command' },
                 to: [
                   { set_variable: { name: 'left_command pressed', value: 1 } },
-                  // { set_variable: { name: 'vi mode', value: 1 } },
                   { key_code: 'left_command' },
                 ],
                 to_delayed_action: {
                   to_if_invoked: [{ set_variable: { name: 'left_command pressed', value: 0 } }],
                   to_if_canceled: [{ set_variable: { name: 'left_command pressed', value: 0 } }],
-                  // to_if_invoked: [{ set_variable: { name: 'vi mode', value: 0 } }],
-                  // to_if_canceled: [{ set_variable: { name: 'vi mode', value: 0 } }],
+                },
+              },
+            ],
+          },
+          {
+            description: 'Double tap and hold right command for MEH',
+            manipulators: [
+              {
+                type: 'basic',
+                conditions: [{ type: 'variable_if', name: 'right_command pressed', value: 1 }],
+                from: { key_code: 'right_command' },
+                to: [
+                  { key_code: 'left_shift', modifiers: ['left_control', 'left_alt'] }
+                ],
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'right_command' },
+                to: [
+                  { set_variable: { name: 'right_command pressed', value: 1 } },
+                  { key_code: 'right_command' },
+                ],
+                to_delayed_action: {
+                  to_if_invoked: [{ set_variable: { name: 'right_command pressed', value: 0 } }],
+                  to_if_canceled: [{ set_variable: { name: 'right_command pressed', value: 0 } }],
                 },
               },
             ],
@@ -113,6 +129,51 @@ function main() {
                 type: 'basic',
                 from: { key_code: 'l', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
                 to: { key_code: 'right_arrow' },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'w', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 's', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'u', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'z', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'r', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'z', modifiers: ['left_shift', 'left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'y', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'c', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'p', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'v', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'd', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'x', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'b', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'left_arrow', modifiers: ['left_alt'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'e', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'right_arrow', modifiers: ['left_alt'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'slash', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                to: { key_code: 'f', modifiers: ['left_command'] },
               },
             ]
           },
