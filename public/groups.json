@@ -1818,6 +1818,9 @@
         },
         {
           "path": "json/personal_arichiardi.json"
+        },
+        {
+          "path": "json/personal_saitonakamura.json"
         }
       ]
     },
