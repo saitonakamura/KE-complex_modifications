@@ -64,11 +64,6 @@ function main() {
                 type: "basic",
                 from: {
                   key_code: "tab",
-                  modifiers: {
-                    optional: [
-                      "any"
-                    ]
-                  }
                 },
                 to: [
                   {
@@ -82,6 +77,16 @@ function main() {
                     key_code: "tab"
                   }
                 ]
+              }
+            ]
+          },
+          {
+            description: 'Quotes key to Enter',
+            manipulators: [
+              {
+                type: 'basic',
+                from: { key_code: 'quote', modifiers: { optional: 'any' } },
+                to: [{ key_code: 'return_or_enter' }],
               }
             ]
           },
