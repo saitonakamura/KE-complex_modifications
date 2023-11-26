@@ -85,6 +85,16 @@ function main() {
             manipulators: [
               {
                 type: 'basic',
+                conditions: [
+                  {
+                    input_sources: [
+                      {
+                        language: "en"
+                      }
+                    ],
+                    type: "input_source_if"
+                  }
+                ],
                 from: { key_code: 'quote', modifiers: { optional: 'any' } },
                 to: [{ key_code: 'return_or_enter' }],
               }
