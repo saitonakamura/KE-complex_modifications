@@ -161,14 +161,14 @@ function main() {
             ]
           },
           {
-            description: 'Double tap and hold left command for MEH',
+            description: 'Double tap and hold left command for fn',
             manipulators: [
               {
                 type: 'basic',
                 conditions: [{ type: 'variable_if', name: 'left_command pressed', value: 1 }],
                 from: { key_code: 'left_command' },
                 to: [
-                  { key_code: 'left_shift', modifiers: ['left_control', 'left_alt'] }
+                  { key_code: 'fn', lazy: true }
                 ],
               },
               {
@@ -186,14 +186,14 @@ function main() {
             ],
           },
           {
-            description: 'Double tap and hold right command for MEH',
+            description: 'Double tap and hold right command for fn',
             manipulators: [
               {
                 type: 'basic',
                 conditions: [{ type: 'variable_if', name: 'right_command pressed', value: 1 }],
                 from: { key_code: 'right_command' },
                 to: [
-                  { key_code: 'left_shift', modifiers: ['left_control', 'left_alt'] }
+                  { key_code: 'fn', lazy: true }
                 ],
               },
               {
@@ -211,71 +211,71 @@ function main() {
             ],
           },
           {
-            description: 'vi mode w/ MEH',
+            description: 'vi mode w/ fn',
             manipulators: [
               {
                 type: 'basic',
-                from: { key_code: 'h', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'left_arrow' },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'j', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'down_arrow' },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'k', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'up_arrow' },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'l', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'right_arrow' },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'w', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 's', modifiers: ['left_command'] },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'u', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'z', modifiers: ['left_command'] },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'r', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'z', modifiers: ['left_shift', 'left_command'] },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'y', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'c', modifiers: ['left_command'] },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'p', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'v', modifiers: ['left_command'] },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'd', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'x', modifiers: ['left_command'] },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'b', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
-                to: { key_code: 'left_arrow', modifiers: ['left_alt'] },
-              },
-              {
-                type: 'basic',
-                from: { key_code: 'e', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                from: { key_code: 'e', modifiers: { mandatory: ['fn'] } },
                 to: { key_code: 'right_arrow', modifiers: ['left_alt'] },
               },
               {
                 type: 'basic',
-                from: { key_code: 'slash', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt'] } },
+                from: { key_code: 'r', modifiers: { mandatory: ['fn', 'left_control'] } },
+                to: { key_code: 'z', modifiers: ['left_shift', 'left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'r', modifiers: { mandatory: ['fn', 'left_alt'] } },
+                to: { key_code: 'right_arrow', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'y', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'c', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'u', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'z', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'p', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'v', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'd', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'x', modifiers: ['left_command'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'h', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'left_arrow' },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'j', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'down_arrow' },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'k', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'up_arrow' },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'l', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'right_arrow' },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'b', modifiers: { mandatory: ['fn'] } },
+                to: { key_code: 'left_arrow', modifiers: ['left_alt'] },
+              },
+              {
+                type: 'basic',
+                from: { key_code: 'slash', modifiers: { mandatory: ['fn'] } },
                 to: { key_code: 'f', modifiers: ['left_command'] },
               },
             ]
