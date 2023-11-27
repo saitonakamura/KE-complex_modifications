@@ -17,6 +17,12 @@ function main() {
               },
               {
                 type: 'basic',
+                conditions: [
+                  {
+                    input_sources: [{ language: 'ru' }],
+                    type: 'input_source_unless'
+                  }
+                ],
                 from: { key_code: side + '_shift' },
                 to: [
                   { set_variable: { name: side + '_shift pressed', value: 1 } },
@@ -30,6 +36,64 @@ function main() {
             ],
           }
         }).concat([
+          {
+            description: 'Double tap and hold left_shift to make it left_control + left_option (cyrillic)',
+            manipulators: [
+              {
+                type: 'basic',
+                conditions: [{ type: 'variable_if', name: 'left_shift pressed cyrillic', value: 1 }],
+                from: { key_code: 'left_shift' },
+                to: [{ key_code: 'left_alt', modifiers: ['left_control'] }],
+              },
+              {
+                type: 'basic',
+                conditions: [
+                  {
+                    input_sources: [{ language: 'ru' }],
+                    type: 'input_source_if'
+                  }
+                ],
+                from: { key_code: 'left_shift' },
+                to: [
+                  { set_variable: { name: 'left_shift pressed cyrillic', value: 1 } },
+                  { key_code: 'left_shift' },
+                ],
+                to_delayed_action: {
+                  to_if_invoked: [{ set_variable: { name: 'left_shift pressed cyrillic', value: 0 } }],
+                  to_if_canceled: [{ set_variable: { name: 'left_shift pressed cyrillic', value: 0 } }],
+                },
+              },
+            ],
+          },
+          {
+            description: 'Double tap and hold right_shift to make it right_control + right_option (cyrillic)',
+            manipulators: [
+              {
+                type: 'basic',
+                conditions: [{ type: 'variable_if', name: 'right_shift pressed cyrillic', value: 1 }],
+                from: { key_code: 'right_shift' },
+                to: [{ key_code: 'right_alt', modifiers: ['right_control'] }],
+              },
+              {
+                type: 'basic',
+                conditions: [
+                  {
+                    input_sources: [{ language: 'ru' }],
+                    type: 'input_source_if'
+                  }
+                ],
+                from: { key_code: 'right_shift' },
+                to: [
+                  { set_variable: { name: 'right_shift pressed cyrillic', value: 1 } },
+                  { key_code: 'right_shift' },
+                ],
+                to_delayed_action: {
+                  to_if_invoked: [{ set_variable: { name: 'right_shift pressed cyrillic', value: 0 } }],
+                  to_if_canceled: [{ set_variable: { name: 'right_shift pressed cyrillic', value: 0 } }],
+                },
+              },
+            ],
+          },
           {
             description: "Caps Lock to ESC on tap/Left control on hold",
             manipulators: [
@@ -87,12 +151,8 @@ function main() {
                 type: 'basic',
                 conditions: [
                   {
-                    input_sources: [
-                      {
-                        language: "en"
-                      }
-                    ],
-                    type: "input_source_if"
+                    input_sources: [{ language: 'en' }],
+                    type: 'input_source_if'
                   }
                 ],
                 from: { key_code: 'quote', modifiers: { optional: 'any' } },
