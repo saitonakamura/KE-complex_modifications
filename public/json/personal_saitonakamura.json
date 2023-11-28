@@ -2,7 +2,7 @@
   "title": "Personal rules (@saitonakamura)",
   "rules": [
     {
-      "description": "Double tap and hold left_shift to make it left_option",
+      "description": "Double tap and hold left_shift to make it left_option + left_control",
       "manipulators": [
         {
           "type": "basic",
@@ -19,7 +19,9 @@
           "to": [
             {
               "key_code": "left_alt",
-              "modifiers": []
+              "modifiers": [
+                "left_control"
+              ]
             }
           ]
         },
@@ -71,7 +73,7 @@
       ]
     },
     {
-      "description": "Double tap and hold right_shift to make it right_option",
+      "description": "Double tap and hold right_shift to make it right_option + right_control",
       "manipulators": [
         {
           "type": "basic",
@@ -88,7 +90,9 @@
           "to": [
             {
               "key_code": "right_alt",
-              "modifiers": []
+              "modifiers": [
+                "right_control"
+              ]
             }
           ]
         },
