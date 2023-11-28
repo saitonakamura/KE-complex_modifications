@@ -7,13 +7,13 @@ function main() {
         title: 'Personal rules (@saitonakamura)',
         rules: ['left', 'right'].map(function (side) {
           return {
-            description: 'Double tap and hold ' + side + '_shift to make it ' + side + '_option',
+            description: 'Double tap and hold ' + side + '_shift to make it ' + side + '_option + ' + side + '_control',
             manipulators: [
               {
                 type: 'basic',
                 conditions: [{ type: 'variable_if', name: side + '_shift pressed', value: 1 }],
                 from: { key_code: side + '_shift' },
-                to: [{ key_code: side + '_alt', modifiers: [] }],
+                to: [{ key_code: side + '_alt', modifiers: [side + '_control'] }],
               },
               {
                 type: 'basic',
