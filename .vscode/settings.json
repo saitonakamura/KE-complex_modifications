@@ -2,5 +2,9 @@
     "files.exclude": {
         "public/static/": true,
         "public/vendor/": true,
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     }
 }
