@@ -206,12 +206,6 @@ function main() {
               })().concat([
                 {
                   type: 'basic',
-                  from: { key_code: 'd', modifiers: { optional: ['any'] } },
-                  conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
-                  to: [{ key_code: 'd', modifiers: ['left_control'] }],
-                },
-                {
-                  type: 'basic',
                   from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
                   to: [{ set_variable: { name: 'caps_lock pressed', value: 1 } }, { key_code: 'escape' }],
                   to_after_key_up: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
