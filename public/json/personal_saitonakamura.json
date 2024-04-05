@@ -683,32 +683,6 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "d",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "caps_lock pressed",
-              "value": 1
-            }
-          ],
-          "to": [
-            {
-              "key_code": "d",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
             "key_code": "caps_lock",
             "modifiers": {
               "optional": [
