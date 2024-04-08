@@ -96,32 +96,71 @@ function main() {
             //     },
             //   ],
             // },
+            {
+              description: 'Caps Lock to left control, ESC on double tap',
+              manipulators: [
+                // {
+                //   type: 'basic',
+                //   from: { key_code: 'spacebar', modifiers: { optional: ['any'] } },
+                //   conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
+                //   to: [{ key_code: 'escape' }, { key_code: 'spacebar' }],
+                // },
+                {
+                  type: 'basic',
+                  from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
+                  conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
+                  to: [{ key_code: 'escape' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
+                  to: [{ set_variable: { name: 'caps_lock pressed', value: 1 } }, { key_code: 'left_control', lazy: true }],
+                  // parameters: {
+                  //   'basic.to_if_alone_timeout_milliseconds': 300,
+                  //   'basic.basic.to_if_held_down_threshold_milliseconds': 200,
+                  // },
+                  to_if_alone: [{ key_code: 'escape' }],
+                  // to_if_held_down: [{ key_code: 'left_control' }],
+                  // to_after_key_up: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+                  to_delayed_action: {
+                    to_if_invoked: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+                    to_if_canceled: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+                  },
+                },
+                // {
+                //   type: 'basic',
+                //   from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
+                //   conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
+                //   to: [{ key_code: 'escape' }],
+                // },
+                // {
+                //   type: 'basic',
+                //   from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
+                //   to: [{ key_code: 'left_control' }, { set_variable: { name: 'caps_lock pressed', value: 1 } }],
+                //   to_delayed_action: {
+                //     to_if_invoked: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+                //     to_if_canceled: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+                //   },
+                // },
+              ],
+            },
             // {
-            //   description: "Caps Lock to ESC on tap/Left control on hold",
+            //   description: 'Caps Lock to ESC on tap/Left control on hold',
             //   manipulators: [
             //     {
-            //       type: "basic",
-            //       from: {
-            //         key_code: "caps_lock",
-            //         modifiers: {
-            //           optional: [
-            //             "any"
-            //           ]
-            //         }
-            //       },
-            //       to: [
-            //         {
-            //           key_code: "left_control",
-            //           lazy: true
-            //         }
-            //       ],
-            //       to_if_alone: [
-            //         {
-            //           key_code: "escape"
-            //         }
-            //       ]
-            //     }
-            //   ]
+            //       type: 'basic',
+            //       from: { key_code: 'spacebar', modifiers: { mandatory: ['left_control'] } },
+            //       conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
+            //       to: [{ key_code: 'spacebar' }],
+            //     },
+            //     {
+            //       type: 'basic',
+            //       from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
+            //       to: [{ key_code: 'left_control', lazy: true }, { set_variable: { name: 'caps_lock pressed', value: 1 } }],
+            //       to_if_alone: [{ key_code: 'escape' }],
+            //       to_after_key_up: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+            //     },
+            //   ],
             // },
             // {
             //   description: 'Caps Lock to ESC on tap/Left control on double tap hold',
@@ -187,31 +226,31 @@ function main() {
             //     },
             //   ],
             // },
-            {
-              description: 'Caps lock shenanigans',
-              manipulators: (function () {
-                var aCharcode = 'a'.charCodeAt(0)
-                var zCharcode = 'z'.charCodeAt(0)
-                const arr = []
-                for (var i = aCharcode; i <= zCharcode; i++) {
-                  var char = String.fromCharCode(i)
-                  arr.push({
-                    type: 'basic',
-                    from: { key_code: char, modifiers: { optional: ['any'] } },
-                    conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
-                    to: [{ key_code: char, modifiers: ['left_control'] }],
-                  })
-                }
-                return arr
-              })().concat([
-                {
-                  type: 'basic',
-                  from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
-                  to: [{ set_variable: { name: 'caps_lock pressed', value: 1 } }, { key_code: 'escape' }],
-                  to_after_key_up: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
-                },
-              ]),
-            },
+            // {
+            //   description: 'Caps lock shenanigans',
+            //   manipulators: (function () {
+            //     var aCharcode = 'a'.charCodeAt(0)
+            //     var zCharcode = 'z'.charCodeAt(0)
+            //     const arr = []
+            //     for (var i = aCharcode; i <= zCharcode; i++) {
+            //       var char = String.fromCharCode(i)
+            //       arr.push({
+            //         type: 'basic',
+            //         from: { key_code: char, modifiers: { optional: ['any'] } },
+            //         conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
+            //         to: [{ key_code: char, modifiers: ['left_control'] }],
+            //       })
+            //     }
+            //     return arr
+            //   })().concat([
+            //     {
+            //       type: 'basic',
+            //       from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
+            //       to: [{ set_variable: { name: 'caps_lock pressed', value: 1 } }, { key_code: 'escape' }],
+            //       to_after_key_up: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+            //     },
+            //   ]),
+            // },
             {
               description: 'Hold tab to Hyper',
               manipulators: [
