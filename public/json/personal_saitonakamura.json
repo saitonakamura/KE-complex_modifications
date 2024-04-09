@@ -2,15 +2,15 @@
   "title": "Personal rules (@saitonakamura)",
   "rules": [
     {
-      "description": "Caps lock + Spacebar = symbols layer",
+      "description": "Double shift = symbols layer",
       "manipulators": [
         {
           "type": "basic",
           "from": {
             "key_code": "y",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -35,8 +35,8 @@
           "from": {
             "key_code": "u",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -61,8 +61,8 @@
           "from": {
             "key_code": "i",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -87,8 +87,8 @@
           "from": {
             "key_code": "o",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -113,8 +113,8 @@
           "from": {
             "key_code": "p",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -139,8 +139,8 @@
           "from": {
             "key_code": "h",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -165,8 +165,8 @@
           "from": {
             "key_code": "j",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -191,8 +191,8 @@
           "from": {
             "key_code": "k",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -214,8 +214,8 @@
           "from": {
             "key_code": "l",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -237,8 +237,8 @@
           "from": {
             "key_code": "semicolon",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -260,8 +260,8 @@
           "from": {
             "key_code": "slash",
             "modifiers": {
-              "mandatory": [
-                "left_control"
+              "optional": [
+                "any"
               ]
             }
           },
@@ -284,7 +284,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "q"
+            "key_code": "q",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -305,7 +310,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "w"
+            "key_code": "w",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -326,7 +336,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "e"
+            "key_code": "e",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -347,7 +362,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "r"
+            "key_code": "r",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -368,7 +388,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "t"
+            "key_code": "t",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -389,7 +414,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "t"
+            "key_code": "t",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -410,7 +440,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "a"
+            "key_code": "a",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -428,7 +463,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "z"
+            "key_code": "z",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -449,7 +489,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "s"
+            "key_code": "s",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -467,7 +512,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "x"
+            "key_code": "x",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -488,7 +538,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "d"
+            "key_code": "d",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -506,7 +561,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "c"
+            "key_code": "c",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -527,7 +587,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "f"
+            "key_code": "f",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -545,7 +610,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "v"
+            "key_code": "v",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "conditions": [
             {
@@ -566,13 +636,15 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "spacebar",
-            "modifiers": {
-              "mandatory": [
-                "left_control"
-              ]
-            }
+            "key_code": "left_shift"
           },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "left_shift pressed",
+              "value": 1
+            }
+          ],
           "to": [
             {
               "set_variable": {
@@ -593,12 +665,47 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "spacebar"
+            "key_code": "left_shift"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "left_shift pressed",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "left_shift"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "left_shift pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "left_shift pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_shift"
           },
           "conditions": [
             {
               "type": "variable_if",
-              "name": "enter pressed",
+              "name": "right_shift pressed",
               "value": 1
             }
           ],
@@ -622,27 +729,37 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "return_or_enter"
+            "key_code": "right_shift"
           },
           "to": [
             {
               "set_variable": {
-                "name": "enter pressed",
+                "name": "right_shift pressed",
                 "value": 1
               }
+            },
+            {
+              "key_code": "right_shift"
             }
           ],
-          "to_if_alone": {
-            "key_code": "return_or_enter"
-          },
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "enter pressed",
-                "value": 0
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "right_shift pressed",
+                  "value": 0
+                }
               }
-            }
-          ]
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "right_shift pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
         }
       ]
     },
