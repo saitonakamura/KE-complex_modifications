@@ -40,7 +40,7 @@ function main() {
         })()
           .concat([
             {
-              description: 'Caps lock + Spacebar = symbols layer',
+              description: 'Double shift = symbols layer',
               manipulators: (function () {
                 var leftMappings = [
                   ['q', { key_code: '1', modifiers: ['right_shift'] }],
@@ -77,7 +77,7 @@ function main() {
                   var toKey = rightMappings[i][1]
                   manipulators.push({
                     type: 'basic',
-                    from: { key_code: fromKeyCode, modifiers: { mandatory: ['left_control'] } },
+                    from: { key_code: fromKeyCode, modifiers: { optional: ['any'] } },
                     conditions: [{ type: 'variable_if', name: 'right symbols layer', value: 1 }],
                     to: [toKey],
                   })
@@ -87,7 +87,7 @@ function main() {
                   var toKey = leftMappings[i][1]
                   manipulators.push({
                     type: 'basic',
-                    from: { key_code: fromKeyCode },
+                    from: { key_code: fromKeyCode, modifiers: { optional: ['any'] } },
                     conditions: [{ type: 'variable_if', name: 'left symbols layer', value: 1 }],
                     to: [toKey],
                   })
@@ -96,24 +96,65 @@ function main() {
               })().concat([
                 {
                   type: 'basic',
-                  from: { key_code: 'spacebar', modifiers: { mandatory: ['left_control'] } },
+                  from: { key_code: 'left_shift' },
+                  conditions: [{ type: 'variable_if', name: 'left_shift pressed', value: 1 }],
                   to: [{ set_variable: { name: 'right symbols layer', value: 1 } }],
                   to_after_key_up: [{ set_variable: { name: 'right symbols layer', value: 0 } }],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'spacebar' },
-                  conditions: [{ type: 'variable_if', name: 'enter pressed', value: 1 }],
+                  from: { key_code: 'left_shift' },
+                  to: [{ set_variable: { name: 'left_shift pressed', value: 1 } }, { key_code: 'left_shift' }],
+                  to_delayed_action: {
+                    to_if_invoked: [{ set_variable: { name: 'left_shift pressed', value: 0 } }],
+                    to_if_canceled: [{ set_variable: { name: 'left_shift pressed', value: 0 } }],
+                  },
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'right_shift' },
+                  conditions: [{ type: 'variable_if', name: 'right_shift pressed', value: 1 }],
                   to: [{ set_variable: { name: 'left symbols layer', value: 1 } }],
                   to_after_key_up: [{ set_variable: { name: 'left symbols layer', value: 0 } }],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'return_or_enter' },
-                  to: [{ set_variable: { name: 'enter pressed', value: 1 } }],
-                  to_if_alone: { key_code: 'return_or_enter' },
-                  to_after_key_up: [{ set_variable: { name: 'enter pressed', value: 0 } }],
+                  from: { key_code: 'right_shift' },
+                  to: [{ set_variable: { name: 'right_shift pressed', value: 1 } }, { key_code: 'right_shift' }],
+                  to_delayed_action: {
+                    to_if_invoked: [{ set_variable: { name: 'right_shift pressed', value: 0 } }],
+                    to_if_canceled: [{ set_variable: { name: 'right_shift pressed', value: 0 } }],
+                  },
                 },
+                // {
+                //   type: 'basic',
+                //   // from: { key_code: 'spacebar', modifiers: { mandatory: ['left_control'] } },
+                //   from: { key_code: 'spacebar' },
+                //   conditions: [{ type: 'variable_if', name: 'caps_lock pressed', value: 1 }],
+                //   to: [{ set_variable: { name: 'right symbols layer', value: 1 } }],
+                //   to_after_key_up: [{ set_variable: { name: 'right symbols layer', value: 0 } }],
+                // },
+                // {
+                //   type: 'basic',
+                //   from: { key_code: 'spacebar' },
+                //   conditions: [{ type: 'variable_if', name: 'enter pressed', value: 1 }],
+                //   to: [{ set_variable: { name: 'left symbols layer', value: 1 } }],
+                //   to_after_key_up: [{ set_variable: { name: 'left symbols layer', value: 0 } }],
+                // },
+                // {
+                //   type: 'basic',
+                //   from: { key_code: 'caps_lock' },
+                //   to: [{ set_variable: { name: 'caps_lock pressed', value: 1 } }],
+                //   to_if_alone: { key_code: 'caps_lock' },
+                //   to_after_key_up: [{ set_variable: { name: 'caps_lock pressed', value: 0 } }],
+                // },
+                // {
+                //   type: 'basic',
+                //   from: { key_code: 'return_or_enter' },
+                //   to: [{ set_variable: { name: 'enter pressed', value: 1 } }],
+                //   to_if_alone: { key_code: 'return_or_enter' },
+                //   to_after_key_up: [{ set_variable: { name: 'enter pressed', value: 0 } }],
+                // },
               ]),
             },
             {
@@ -169,21 +210,9 @@ function main() {
               manipulators: [
                 {
                   type: 'basic',
-                  from: {
-                    key_code: 'tab',
-                  },
-                  to: [
-                    {
-                      key_code: 'left_shift',
-                      modifiers: ['left_control', 'left_alt', 'left_command'],
-                      lazy: true,
-                    },
-                  ],
-                  to_if_alone: [
-                    {
-                      key_code: 'tab',
-                    },
-                  ],
+                  from: { key_code: 'tab' },
+                  to: [{ key_code: 'left_shift', modifiers: ['left_control', 'left_alt', 'left_command'], lazy: true }],
+                  to_if_alone: [{ key_code: 'tab' }],
                 },
               ],
             },
@@ -192,19 +221,8 @@ function main() {
               manipulators: [
                 {
                   type: 'basic',
-                  from: {
-                    key_code: 'spacebar',
-                    modifiers: {
-                      mandatory: ['left_shift'],
-                    },
-                  },
-                  to: [
-                    {
-                      key_code: 'delete_or_backspace',
-                      lazy: true,
-                      repeat: true,
-                    },
-                  ],
+                  from: { key_code: 'spacebar', modifiers: { mandatory: ['left_shift'] } },
+                  to: [{ key_code: 'delete_or_backspace', lazy: true, repeat: true }],
                 },
               ],
             },
@@ -213,19 +231,8 @@ function main() {
               manipulators: [
                 {
                   type: 'basic',
-                  from: {
-                    key_code: 'spacebar',
-                    modifiers: {
-                      mandatory: ['right_shift'],
-                    },
-                  },
-                  to: [
-                    {
-                      key_code: 'delete_forward',
-                      lazy: true,
-                      repeat: true,
-                    },
-                  ],
+                  from: { key_code: 'spacebar', modifiers: { mandatory: ['right_shift'] } },
+                  to: [{ key_code: 'delete_forward', lazy: true, repeat: true }],
                 },
               ],
             },
