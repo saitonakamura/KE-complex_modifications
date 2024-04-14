@@ -57,6 +57,7 @@ function main() {
                   ['c', { key_code: 'equal_sign' }],
                   ['f', { key_code: 'backslash', modifiers: ['right_shift'] }],
                   ['v', { key_code: 'backslash' }],
+                  ['spacebar', { key_code: 'delete_forward', lazy: true, repeat: true }],
                 ]
                 var rightMappings = [
                   ['y', { key_code: '6', modifiers: ['left_shift'] }],
@@ -64,12 +65,13 @@ function main() {
                   ['i', { key_code: '8', modifiers: ['left_shift'] }],
                   ['o', { key_code: '9', modifiers: ['left_shift'] }],
                   ['p', { key_code: '0', modifiers: ['left_shift'] }],
-                  ['h', { key_code: 'open_bracket', modifiers: ['left_shift'] }],
-                  ['j', { key_code: 'close_bracket', modifiers: ['left_shift'] }],
-                  ['k', { key_code: 'open_bracket' }],
-                  ['l', { key_code: 'close_bracket' }],
+                  ['k', { key_code: 'open_bracket', modifiers: ['left_shift'] }],
+                  ['l', { key_code: 'close_bracket', modifiers: ['left_shift'] }],
+                  ['comma', { key_code: 'open_bracket' }],
+                  ['period', { key_code: 'close_bracket' }],
                   ['semicolon', { key_code: 'quote' }],
                   ['slash', { key_code: 'quote', modifiers: ['left_shift'] }],
+                  ['spacebar', { key_code: 'delete_or_backspace', lazy: true, repeat: true }],
                 ]
                 var manipulators = []
                 for (var i = 0; i < rightMappings.length; i++) {
@@ -217,18 +219,182 @@ function main() {
               ],
             },
             {
-              description: 'Left Shift + Spacebar => Backspace',
+              description: '<Hyper-w> magic',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'h' },
+                  conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_control', 'left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'j' },
+                  conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
+                  to: [{ key_code: 'down_arrow', modifiers: ['left_control', 'left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'k' },
+                  conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
+                  to: [{ key_code: 'up_arrow', modifiers: ['left_control', 'left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'l' },
+                  conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_control', 'left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 't' },
+                  conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_control', 'left_option', 'left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 't', modifiers: { mandatory: ['right_shift'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_control', 'left_option', 'left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'q' },
+                  conditions: [
+                    { type: 'variable_if', name: 'hyper window pressed', value: 1 },
+                    { type: 'frontmost_application_unless', bundle_identifiers: ['^com\\.apple\\.Terminal$', '^com\\.microsoft\\.VSCode$', '^com\\.apple\\.Safarif$'] },
+                  ],
+                  to: [{ key_code: 'w', modifiers: ['right_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'o' },
+                  conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
+                  to: [{ key_code: 'return_or_enter', modifiers: ['left_control', 'left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'w', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  to: [{ set_variable: { name: 'hyper window pressed', value: 1 } }],
+                  to_delayed_action: {
+                    to_if_invoked: [{ set_variable: { name: 'hyper window pressed', value: 0 } }],
+                    to_if_canceled: [{ set_variable: { name: 'hyper window pressed', value: 0 } }],
+                  },
+                },
+              ],
+            },
+            {
+              description: '<Hyper-f> magic',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'h', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'left_arrow' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'j', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'down_arrow' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'k', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'up_arrow' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'l', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'y', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'u', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'o', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'p', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper f pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'f', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  to: [{ set_variable: { name: 'hyper f pressed', value: 1, key_up_value: 0 } }],
+                },
+              ],
+            },
+            {
+              description: '<Hyper-r> magic',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'h', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper r pressed', value: 1 }],
+                  to: [{ key_code: 'delete_or_backspace' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'l', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper r pressed', value: 1 }],
+                  to: [{ key_code: 'delete_forward' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'y', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper r pressed', value: 1 }],
+                  to: [{ key_code: 'delete_or_backspace', modifiers: ['left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'u', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper r pressed', value: 1 }],
+                  to: [{ key_code: 'k', modifiers: ['left_control'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'o', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper r pressed', value: 1 }],
+                  to: [{ key_code: 'delete_or_backspace', modifiers: ['left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'p', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper r pressed', value: 1 }],
+                  to: [{ key_code: 'delete_forward', modifiers: ['left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'r', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  to: [{ set_variable: { name: 'hyper r pressed', value: 1, key_up_value: 0 } }],
+                },
+              ],
+            },
+            {
+              description: 'Left/Right Shift + Spacebar => Backspace/Delete forward',
               manipulators: [
                 {
                   type: 'basic',
                   from: { key_code: 'spacebar', modifiers: { mandatory: ['left_shift'] } },
                   to: [{ key_code: 'delete_or_backspace', lazy: true, repeat: true }],
                 },
-              ],
-            },
-            {
-              description: 'Right Shift + Spacebar => Delete Forward',
-              manipulators: [
                 {
                   type: 'basic',
                   from: { key_code: 'spacebar', modifiers: { mandatory: ['right_shift'] } },
@@ -237,26 +403,46 @@ function main() {
               ],
             },
             {
-              description: 'vi hjkl with option',
+              description: 'vi hjkl, be, yu(^&) with fn',
               manipulators: [
                 {
                   type: 'basic',
-                  from: { key_code: 'h', modifiers: { mandatory: ['left_option'] } },
+                  from: { key_code: 'e', modifiers: { mandatory: ['fn'] } },
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'b', modifiers: { mandatory: ['fn'] } },
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'u', modifiers: { mandatory: ['fn'] } },
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'y', modifiers: { mandatory: ['fn'] } },
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'h', modifiers: { mandatory: ['fn'] } },
                   to: [{ key_code: 'left_arrow' }],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'j', modifiers: { mandatory: ['left_option'] } },
+                  from: { key_code: 'j', modifiers: { mandatory: ['fn'] } },
                   to: [{ key_code: 'down_arrow' }],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'k', modifiers: { mandatory: ['left_option'] } },
+                  from: { key_code: 'k', modifiers: { mandatory: ['fn'] } },
                   to: [{ key_code: 'up_arrow' }],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'l', modifiers: { mandatory: ['left_option'] } },
+                  from: { key_code: 'l', modifiers: { mandatory: ['fn'] } },
                   to: [{ key_code: 'right_arrow' }],
                 },
               ],
