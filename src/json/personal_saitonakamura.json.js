@@ -388,6 +388,64 @@ function main() {
               ],
             },
             {
+              description: '<Hyper-v> magic',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'h', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_shift'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'j', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'down_arrow', modifiers: ['left_shift'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'k', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'up_arrow', modifiers: ['left_shift'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'l', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_shift'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'y', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_shift', 'left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'u', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_shift', 'left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'o', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_shift', 'left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'p', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  conditions: [{ type: 'variable_if', name: 'hyper v pressed', value: 1 }],
+                  to: [{ key_code: 'right_arrow', modifiers: ['left_shift', 'left_option'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'v', modifiers: { mandatory: ['left_shift', 'left_control', 'left_alt', 'left_command'] } },
+                  to: [{ set_variable: { name: 'hyper v pressed', value: 1, key_up_value: 0 } }],
+                },
+              ],
+            },
+            {
               description: 'Left/Right Shift + Spacebar => Backspace/Delete forward',
               manipulators: [
                 {
@@ -444,6 +502,23 @@ function main() {
                   type: 'basic',
                   from: { key_code: 'l', modifiers: { mandatory: ['fn'] } },
                   to: [{ key_code: 'right_arrow' }],
+                },
+              ],
+            },
+            {
+              description: 'Slack vim like shortcuts overides',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'o', modifiers: { mandatory: 'left_control' } },
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  to: [{ key_code: 'open_bracket', modifiers: ['left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'i', modifiers: { mandatory: 'left_control' } },
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  to: [{ key_code: 'close_bracket', modifiers: ['left_command'] }],
                 },
               ],
             },
