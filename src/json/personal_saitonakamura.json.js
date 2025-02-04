@@ -1,5 +1,14 @@
 // JavaScript should be written in ECMAScript 5.1.
 
+var builtinKeyboardOnly = {
+  type: 'device_if',
+  identifiers: [
+    {
+      vendor_id: 1452,
+    },
+  ],
+}
+
 function main() {
   console.log(
     JSON.stringify(
@@ -215,6 +224,25 @@ function main() {
                   from: { key_code: 'tab' },
                   to: [{ key_code: 'left_shift', modifiers: ['left_control', 'left_alt', 'left_command'], lazy: true }],
                   to_if_alone: [{ key_code: 'tab' }],
+                },
+              ],
+            },
+            {
+              description: 'Hold z/"/" to left/right option',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'z', modifiers: { optional: ['any'] } },
+                  to: [{ key_code: 'left_option', lazy: true }],
+                  to_if_alone: [{ key_code: 'z' }],
+                  conditions: [builtinKeyboardOnly],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'slash', modifiers: { optional: ['any'] } },
+                  to: [{ key_code: 'right_option', lazy: true }],
+                  to_if_alone: [{ key_code: 'slash' }],
+                  conditions: [builtinKeyboardOnly],
                 },
               ],
             },
@@ -519,6 +547,18 @@ function main() {
                   from: { key_code: 'i', modifiers: { mandatory: 'left_control' } },
                   conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
                   to: [{ key_code: 'close_bracket', modifiers: ['left_command'] }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'n', modifiers: { mandatory: 'left_control' } },
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  to: [{ key_code: 'down_arrow'  }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'p', modifiers: { mandatory: 'left_control' } },
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  to: [{ key_code: 'up_arrow'  }],
                 },
               ],
             },
