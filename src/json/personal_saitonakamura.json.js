@@ -2,11 +2,7 @@
 
 var builtinKeyboardOnly = {
   type: 'device_if',
-  identifiers: [
-    {
-      vendor_id: 1452,
-    },
-  ],
+  identifiers: [{ vendor_id: 1452 }, { vendor_id: 76 }, { is_built_in_keyboard: true }],
 }
 
 function main() {
