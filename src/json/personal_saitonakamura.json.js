@@ -243,6 +243,18 @@ function main() {
               ],
             },
             {
+              description: 'Hold enter to right control',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'return_or_enter', modifiers: { optional: ['any'] } },
+                  to: [{ key_code: 'left_control', lazy: true }],
+                  to_if_alone: [{ key_code: 'return_or_enter' }],
+                  conditions: [builtinKeyboardOnly],
+                },
+              ],
+            },
+            {
               description: '<Hyper-w> magic',
               manipulators: [
                 {
@@ -548,13 +560,13 @@ function main() {
                   type: 'basic',
                   from: { key_code: 'n', modifiers: { mandatory: 'left_control' } },
                   conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
-                  to: [{ key_code: 'down_arrow'  }],
+                  to: [{ key_code: 'down_arrow' }],
                 },
                 {
                   type: 'basic',
                   from: { key_code: 'p', modifiers: { mandatory: 'left_control' } },
                   conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
-                  to: [{ key_code: 'up_arrow'  }],
+                  to: [{ key_code: 'up_arrow' }],
                 },
               ],
             },
