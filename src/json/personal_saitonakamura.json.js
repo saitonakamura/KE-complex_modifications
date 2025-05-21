@@ -283,13 +283,13 @@ function main() {
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 't' },
+                  from: { key_code: 'g' },
                   conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
-                  to: [{ key_code: 'right_arrow', modifiers: ['left_control', 'left_option', 'left_command'] }],
+                  to: [{ key_code: 'left_arrow', modifiers: ['left_control', 'left_option', 'left_command'] }],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 't', modifiers: { mandatory: ['right_shift'] } },
+                  from: { key_code: 'semicolon' },
                   conditions: [{ type: 'variable_if', name: 'hyper window pressed', value: 1 }],
                   to: [{ key_code: 'right_arrow', modifiers: ['left_control', 'left_option', 'left_command'] }],
                 },
@@ -542,30 +542,30 @@ function main() {
               ],
             },
             {
-              description: 'Slack vim like shortcuts overides',
+              description: 'Slack/Safari vim like shortcuts overides',
               manipulators: [
                 {
                   type: 'basic',
                   from: { key_code: 'o', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
                   to: [{ key_code: 'open_bracket', modifiers: ['left_command'] }],
                 },
                 {
                   type: 'basic',
                   from: { key_code: 'i', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
                   to: [{ key_code: 'close_bracket', modifiers: ['left_command'] }],
                 },
                 {
                   type: 'basic',
                   from: { key_code: 'n', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
                   to: [{ key_code: 'down_arrow' }],
                 },
                 {
                   type: 'basic',
                   from: { key_code: 'p', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
                   to: [{ key_code: 'up_arrow' }],
                 },
               ],
