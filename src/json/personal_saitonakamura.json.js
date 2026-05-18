@@ -542,6 +542,41 @@ function main() {
               ],
             },
             {
+              description: 'Physical left_control to right_control (built-in keyboard), then right_control + hjkl to arrows',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'h', modifiers: { mandatory: ['right_control'] } },
+                  to: [{ key_code: 'left_arrow' }],
+                  conditions: [builtinKeyboardOnly],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'j', modifiers: { mandatory: ['right_control'] } },
+                  to: [{ key_code: 'down_arrow' }],
+                  conditions: [builtinKeyboardOnly],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'k', modifiers: { mandatory: ['right_control'] } },
+                  to: [{ key_code: 'up_arrow' }],
+                  conditions: [builtinKeyboardOnly],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'l', modifiers: { mandatory: ['right_control'] } },
+                  to: [{ key_code: 'right_arrow' }],
+                  conditions: [builtinKeyboardOnly],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'left_control', modifiers: { optional: ['any'] } },
+                  to: [{ key_code: 'right_control' }],
+                  conditions: [builtinKeyboardOnly],
+                },
+              ],
+            },
+            {
               description: 'Slack/Safari vim like shortcuts overides',
               manipulators: [
                 {
