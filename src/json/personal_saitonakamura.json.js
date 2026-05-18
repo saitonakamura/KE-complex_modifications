@@ -5,6 +5,8 @@ var builtinKeyboardOnly = {
   identifiers: [{ vendor_id: 1452 }, { vendor_id: 76 }, { is_built_in_keyboard: true }],
 }
 
+var ctrlNPOIapps = ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari', '^ai\\.perplexity\\.comet', '^com\\.google\\.chrome']
+
 function main() {
   console.log(
     JSON.stringify(
@@ -497,6 +499,49 @@ function main() {
               ],
             },
             {
+              description: 'Double tap comma/period to brackets',
+              manipulators: [
+                {
+                  type: 'basic',
+                  from: { key_code: 'comma', modifiers: { optional: ['any'] } },
+                  conditions: [{ type: 'variable_if', name: 'comma double tap', value: 1 }],
+                  to: [{ set_variable: { name: 'comma double tap', value: 0 } }, { key_code: 'open_bracket' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'comma', modifiers: { optional: ['any'] } },
+                  conditions: [{ type: 'variable_unless', name: 'comma double tap', value: 1 }],
+                  to: [{ set_variable: { name: 'comma double tap', value: 1 } }],
+                  to_delayed_action: {
+                    to_if_invoked: [{ set_variable: { name: 'comma double tap', value: 0 } }, { key_code: 'comma' }],
+                    to_if_canceled: [{ set_variable: { name: 'comma double tap', value: 0 } }],
+                  },
+                  parameters: {
+                    'basic.to_delayed_action_delay_milliseconds': 300,
+                  },
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'period', modifiers: { optional: ['any'] } },
+                  conditions: [{ type: 'variable_if', name: 'period double tap', value: 1 }],
+                  to: [{ set_variable: { name: 'period double tap', value: 0 } }, { key_code: 'close_bracket' }],
+                },
+                {
+                  type: 'basic',
+                  from: { key_code: 'period', modifiers: { optional: ['any'] } },
+                  conditions: [{ type: 'variable_unless', name: 'period double tap', value: 1 }],
+                  to: [{ set_variable: { name: 'period double tap', value: 1 } }],
+                  to_delayed_action: {
+                    to_if_invoked: [{ set_variable: { name: 'period double tap', value: 0 } }, { key_code: 'period' }],
+                    to_if_canceled: [{ set_variable: { name: 'period double tap', value: 0 } }],
+                  },
+                  parameters: {
+                    'basic.to_delayed_action_delay_milliseconds': 300,
+                  },
+                },
+              ],
+            },
+            {
               description: 'vi hjkl, be, yu(^&) with fn',
               manipulators: [
                 {
@@ -577,30 +622,30 @@ function main() {
               ],
             },
             {
-              description: 'Slack/Safari vim like shortcuts overides',
+              description: 'Slack/Browsers vim like shortcuts overides',
               manipulators: [
                 {
                   type: 'basic',
                   from: { key_code: 'o', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ctrlNPOIapps }],
                   to: [{ key_code: 'open_bracket', modifiers: ['left_command'] }],
                 },
                 {
                   type: 'basic',
                   from: { key_code: 'i', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ctrlNPOIapps }],
                   to: [{ key_code: 'close_bracket', modifiers: ['left_command'] }],
                 },
                 {
                   type: 'basic',
                   from: { key_code: 'n', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ctrlNPOIapps }],
                   to: [{ key_code: 'down_arrow' }],
                 },
                 {
                   type: 'basic',
                   from: { key_code: 'p', modifiers: { mandatory: 'left_control' } },
-                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari'] }],
+                  conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ctrlNPOIapps }],
                   to: [{ key_code: 'up_arrow' }],
                 },
               ],
@@ -915,5 +960,6 @@ function main() {
     )
   )
 }
+
 
 main()
