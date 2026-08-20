@@ -19,6 +19,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -45,6 +59,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -71,6 +99,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -97,6 +139,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -123,6 +179,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -149,6 +219,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -175,6 +259,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -201,6 +299,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -224,6 +336,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -247,6 +373,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -270,6 +410,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -296,6 +450,20 @@
               "type": "variable_if",
               "name": "right symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -321,6 +489,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -347,6 +529,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -373,6 +569,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -399,6 +609,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -425,6 +649,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -451,6 +689,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -477,6 +729,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -503,6 +769,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -526,6 +806,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -552,6 +846,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -575,6 +883,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -601,6 +923,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -624,6 +960,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -650,6 +1000,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -673,6 +1037,20 @@
               "type": "variable_if",
               "name": "left symbols layer",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -693,6 +1071,20 @@
               "type": "variable_if",
               "name": "left_shift pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -745,7 +1137,23 @@
                 }
               }
             ]
-          }
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "basic",
@@ -757,6 +1165,20 @@
               "type": "variable_if",
               "name": "right_shift pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -809,7 +1231,23 @@
                 }
               }
             ]
-          }
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -831,6 +1269,20 @@
               "type": "variable_if",
               "name": "caps_lock pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -883,7 +1335,23 @@
                 }
               }
             ]
-          }
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -909,6 +1377,22 @@
           "to_if_alone": [
             {
               "key_code": "tab"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ]
         }
@@ -1051,6 +1535,20 @@
               "type": "variable_if",
               "name": "hyper window pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1073,6 +1571,20 @@
               "type": "variable_if",
               "name": "hyper window pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1095,6 +1607,20 @@
               "type": "variable_if",
               "name": "hyper window pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1117,6 +1643,20 @@
               "type": "variable_if",
               "name": "hyper window pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1139,6 +1679,20 @@
               "type": "variable_if",
               "name": "hyper window pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1162,6 +1716,20 @@
               "type": "variable_if",
               "name": "hyper window pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1193,6 +1761,20 @@
                 "^com\\.microsoft\\.VSCode$",
                 "^com\\.apple\\.Safarif$"
               ]
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1214,6 +1796,20 @@
               "type": "variable_if",
               "name": "hyper window pressed",
               "value": 1
+            },
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ],
           "to": [
@@ -1264,7 +1860,23 @@
                 }
               }
             ]
-          }
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1995,6 +2607,22 @@
               "lazy": true,
               "repeat": true
             }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
           ]
         },
         {
@@ -2012,6 +2640,22 @@
               "key_code": "delete_forward",
               "lazy": true,
               "repeat": true
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452
+                },
+                {
+                  "vendor_id": 76
+                },
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ]
         }
@@ -2335,6 +2979,9 @@
             "modifiers": {
               "mandatory": [
                 "right_control"
+              ],
+              "optional": [
+                "any"
               ]
             }
           },
@@ -2367,6 +3014,9 @@
             "modifiers": {
               "mandatory": [
                 "right_control"
+              ],
+              "optional": [
+                "any"
               ]
             }
           },
@@ -2399,6 +3049,9 @@
             "modifiers": {
               "mandatory": [
                 "right_control"
+              ],
+              "optional": [
+                "any"
               ]
             }
           },
@@ -2431,6 +3084,9 @@
             "modifiers": {
               "mandatory": [
                 "right_control"
+              ],
+              "optional": [
+                "any"
               ]
             }
           },

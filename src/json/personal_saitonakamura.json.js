@@ -7,6 +7,33 @@ var builtinKeyboardOnly = {
 
 var ctrlNPOIapps = ['^com\\.tinyspeck\\.slackmacgap$', '^com\\.apple\\.Safari', '^ai\\.perplexity\\.comet', '^com\\.google\\.chrome']
 
+// Rules whose behaviour the Voyager now carries in its firmware (see
+// voyager-layout/karabiner.md). They are redundant on that board -- most of
+// them can no longer even fire from it, since the keyboard consumes the
+// trigger before Karabiner sees it -- but the MacBook's built-in keyboard
+// still needs every one of them. So they get scoped rather than dropped:
+// alive on the laptop, inert on the Voyager.
+var portedToVoyager = [
+  '<Hyper-w> magic',
+  'Hold tab to Hyper',
+  'Left/Right Shift + Spacebar => Backspace/Delete forward',
+  'Double shift = symbols layer',
+  'Caps Lock to left control, ESC on double tap',
+]
+
+function scopeToBuiltinKeyboard(rule) {
+  if (!rule || portedToVoyager.indexOf(rule.description) < 0) return rule
+  rule.manipulators = rule.manipulators.map(function (manipulator) {
+    var conditions = manipulator.conditions || []
+    var alreadyScoped = conditions.some(function (condition) {
+      return condition.type === 'device_if'
+    })
+    if (!alreadyScoped) manipulator.conditions = conditions.concat([builtinKeyboardOnly])
+    return manipulator
+  })
+  return rule
+}
+
 function main() {
   console.log(
     JSON.stringify(
@@ -591,25 +618,25 @@ function main() {
               manipulators: [
                 {
                   type: 'basic',
-                  from: { key_code: 'h', modifiers: { mandatory: ['right_control'] } },
+                  from: { key_code: 'h', modifiers: { mandatory: ['right_control'], optional: ['any'] } },
                   to: [{ key_code: 'left_arrow' }],
                   conditions: [builtinKeyboardOnly],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'j', modifiers: { mandatory: ['right_control'] } },
+                  from: { key_code: 'j', modifiers: { mandatory: ['right_control'], optional: ['any'] } },
                   to: [{ key_code: 'down_arrow' }],
                   conditions: [builtinKeyboardOnly],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'k', modifiers: { mandatory: ['right_control'] } },
+                  from: { key_code: 'k', modifiers: { mandatory: ['right_control'], optional: ['any'] } },
                   to: [{ key_code: 'up_arrow' }],
                   conditions: [builtinKeyboardOnly],
                 },
                 {
                   type: 'basic',
-                  from: { key_code: 'l', modifiers: { mandatory: ['right_control'] } },
+                  from: { key_code: 'l', modifiers: { mandatory: ['right_control'], optional: ['any'] } },
                   to: [{ key_code: 'right_arrow' }],
                   conditions: [builtinKeyboardOnly],
                 },
@@ -953,7 +980,8 @@ function main() {
             //   ]
             // },
           ])
-          .filter(Boolean),
+          .filter(Boolean)
+          .map(scopeToBuiltinKeyboard),
       },
       null,
       '  '
